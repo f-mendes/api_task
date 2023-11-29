@@ -1,7 +1,9 @@
+import { buildRoutePath } from "./utils/build-route-path.js"
+
 export const routes = [
   {
     method: 'POST',
-    path: '/tasks',
+    path: buildRoutePath('/tasks'),
     handle: (req, res) => {
       console.log('POST')
 
@@ -10,7 +12,7 @@ export const routes = [
   },
   {
     method: 'GET',
-    path: '/tasks',
+    path: buildRoutePath('/tasks'),
     handle: (req, res) => {
       console.log('GET')
       return res.writeHead(200).end()
@@ -18,7 +20,7 @@ export const routes = [
   },
   {
     method: 'PUT',
-    path: '/tasks/:id',
+    path: buildRoutePath('/tasks/:id'),
     handle: (req, res) => {
       console.log('PUT')
       return res.writeHead(204).end()
@@ -26,7 +28,7 @@ export const routes = [
   },
   {
     method: 'DELETE',
-    path: '/tasks/:id',
+    path: buildRoutePath('/tasks/:id'),
     handle: (req, res) => {
       console.log('DELETE')
       return res.writeHead(204).end()
@@ -34,7 +36,7 @@ export const routes = [
   },
   {
     method: 'PATCH',
-    path: '/tasks/:id/complete',
+    path: buildRoutePath('/tasks/:id/complete'),
     handle: (req, res) => {
       console.log('PATCH')
       return res.writeHead(204).end()
