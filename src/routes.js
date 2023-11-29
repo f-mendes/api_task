@@ -15,15 +15,15 @@ export const routes = [
 
       try {
         paramsRequired(title, description)
-        const datetime = datetime()
+        const date_time = datetime()
       
         const task = {
           id: randomUUID(),
           title,
           description,
           completed_at: null,
-          created_at: datetime,
-          updated_at: datetime
+          created_at: date_time,
+          updated_at: date_time
         }
         
         database.insert('tasks', task)
